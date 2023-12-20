@@ -1,6 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
+import { withRouter } from "react-router";
 import Peer from 'peerjs';
-import './ScreenMatch.scss'
+import './ScreenMatch.scss';
+import { NavLink } from "react-router-dom";
+import ReportModal from "../Modal/ReportModal/ReportModal";
+import InfoUserModal from "../Modal/InfoUserModal/InfoUserModal";
 class ScreenMatch extends React.Component {
     constructor(props) {
         super(props);
@@ -14,10 +18,13 @@ class ScreenMatch extends React.Component {
         remotePeerId: "",
         connection: null,
         receivedMessages: [],
-        messageToSent: ""
+        messageToSent: "",
+        popUpReport: false,
+        popUpInfoUser: false,
     }
 
     componentDidMount() {
+
         const peer = new Peer();
 
         peer.on('open', (id) => {
@@ -108,11 +115,22 @@ class ScreenMatch extends React.Component {
             messageToSent: e.target.value
         })
     }
+
+    changePopUpReport = () => {
+        this.setState({
+            popUpReport: !this.state.popUpReport
+        })
+    }
+
+    changePopUpInfoUser = () => {
+        this.setState({
+            popUpInfoUser: !this.state.popUpInfoUser
+        })
+    }
     render() {
         const { receivedMessages } = this.state;
         return (
             < >
-
                 <div className="content-container">
                     <div className="screen-container">
                         <div className="screen">
@@ -124,25 +142,26 @@ class ScreenMatch extends React.Component {
                             </div>
                         </div>
                         <div className="button">
-                            <a href="" className="stop-btn">Stop</a>
-                            <a href="" className="next-btn">Next</a>
+                            <NavLink className="stop-btn" to='/' exact>Stop</NavLink>
+                            <button className="next-btn">Next</button>
                         </div>
                     </div>
                     <div className="chat">
                         <div className="avt-report">
-                            <div className="avt-name">
+                            <div className="avt-name" onClick={this.changePopUpInfoUser}>
                                 <img src={require("../../assets/images/avt.jpeg")} alt="" /> Trung Nguyen
                             </div>
-                            <i className="fa-solid fa-flag"></i>
+                            <i className="fa-solid fa-flag" onClick={this.changePopUpReport}></i>
                         </div>
 
                         <div className="message">
                             {receivedMessages.map(({ message, isSender }, index) => (
                                 <div
                                     key={index}
-                                    className={isSender ? 'sender-message' : 'receiver-message'}
+                                    className={isSender ? 'send-mess' : 'receive-mess'}
                                 >
-                                    {message}
+                                    <p className="userName">Trung</p>
+                                    <span className="mess">{message} </span>
                                 </div>
                             ))}
                         </div>
@@ -164,9 +183,11 @@ class ScreenMatch extends React.Component {
                         <button onClick={() => this.callRemote(this.state.remotePeerId)}>Call</button>
                     </div>
                 </header>
+                <ReportModal popUpReport={this.state.popUpReport} changePopUpReport={this.changePopUpReport} />
+                <InfoUserModal popUpInfoUser={this.state.popUpInfoUser} changePopUpInfoUser={this.changePopUpInfoUser} />
             </>
         )
     }
 }
 
-export default ScreenMatch;
+export default withRouter(ScreenMatch);

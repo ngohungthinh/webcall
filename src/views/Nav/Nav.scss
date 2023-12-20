@@ -1,32 +1,121 @@
-// .topnav {
-//     overflow: hidden;
-//     background-color: #857e7e;
-// }
-
-// .topnav a {
-//     float: left;
-//     color: #f2f2f2;
-//     text-align: center;
-//     padding: 14px 16px;
-//     text-decoration: none;
-//     font-size: 17px;
-// }
-
-// .topnav a:hover {
-//     background-color: #ddd;
-//     color: black;
-// }
-
-// .topnav a.active {
-//     background-color: #04AA6D;
-//     color: white;
-// }
 @import url(../../assets/css/bootstrap.min.css);
 @import url(../../assets/css/normalize.min.css);
 @import url(../../assets/css/header-footer.css);
 @import url(../../assets/css/base.css);
 
-button.btn.btn-Login {
-    margin: 0;
-    width: 17%
+.header-container {
+    .header {
+        height: 64px;
+    }
+
+    .header__navbar {
+        display: flex;
+        justify-content: space-between;
+        /*căn đối tượng ra 2 bên lề của trang web*/
+    }
+
+    .header__navbar-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 4px;
+        /* border: 3px solid black; */
+    }
+
+    .header__navbar-item {
+        display: inline-block;
+        /*đưa đối tượng lên cùng 1 hàng*/
+    }
+
+    .header__navbar-item-link {
+        display: inline-block;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        color: orange;
+    }
+
+    .header__navbar-item-link {
+        margin: 10px;
+    }
+
+    .header__navbar-icon-link {
+        color: orange;
+        text-decoration: none;
+        font-size: 19px;
+        margin: 0 4px;
+    }
+
+    .container {
+        height: 101%;
+        width: 100%;
+        margin: auto;
+        max-width: 100%;
+        /* border: 3px solid pink; */
+    }
+
+    h1 {
+        font-size: 80px;
+        text-align: left;
+        margin-top: 100px;
+        margin-left: 50px;
+        color: orange;
+    }
+
+    .btn {
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 50px;
+        border-radius: 50px;
+
+        width: 17%;
+        cursor: pointer;
+        transition: opacity 0.4s ease;
+        /*độ trễ khi đổi màu*/
+
+    }
+
+    .btn:hover {
+        background-color: white;
+        /* opacity: 0.5; */
+        /*độ đục == đổi màu button*/
+    }
+
+    .btn-Filter {
+        background-color: orange;
+        font-size: 30px;
+    }
+
+    .btn-Start {
+        background-color: orange;
+        font-size: 20px;
+    }
+
+    .btn-Login {
+        background-color: green;
+        font-size: 10px;
+        padding: 1px 15px;
+        display: inline;
+
+    }
+
+    #i-vid {
+        font-size: x-large;
+        margin-right: 10px;
+        margin-left: -10px;
+    }
+
+
+    h2 {
+        color: white;
+        margin-top: 0;
+    }
+
+    p {
+        color: rgb(192, 155, 155);
+        margin-top: 0;
+
+    }
 }

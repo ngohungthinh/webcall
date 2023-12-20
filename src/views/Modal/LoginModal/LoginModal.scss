@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Merriweather:wght@400;700&family=Montserrat:ital,wght@1,200&display=swap);
+
+@import url(./css/base.css);
+@import url(./css/login.css);
+
+.modal-body {
+    padding: 0;
+}
+
+.modal-content {
+    width: fit-content;
+    border-radius: 50px;
+    margin-top: 100px;
+}
+
+a.btn.btn-register {
+    width: 100%;
+}

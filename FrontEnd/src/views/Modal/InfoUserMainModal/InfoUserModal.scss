@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+.ABCDInfoUserMain {
+    .infomation {
+        box-sizing: border-box;
+
+        background: #ffffff;
+        border-radius: 40px;
+        border-style: solid;
+        border-color: #886304;
+        border-width: 3px;
+        width: 470px;
+        height: 610px;
+        position: relative;
+        padding: 10px 25px;
+
+        .top {
+            position: relative;
+            width: 100%;
+            height: 250px;
+
+        }
+
+        .bottom {
+            position: relative;
+            width: 100%;
+            height: 310px;
+            top: 40px
+        }
+
+        .ti-pencil {
+            position: relative;
+            top: -165px;
+            left: 410px;
+            font-size: 20px;
+        }
+
+        .ti-arrow-left {
+            position: relative;
+            top: -165px;
+            left: 10px;
+            font-size: 20px;
+        }
+
+        .avatar {
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: 10px;
+        }
+
+
+        .name {
+            color: #000000;
+            text-align: center;
+            font: 800 27px "-";
+            position: relative;
+            top: 25px
+        }
+
+        .info {
+            width: 100%;
+            height: 60px;
+            padding: 5px;
+            position: relative;
+        }
+
+        .span1 {
+            color: #000000;
+            font-family: 'times new roman', sans-serif;
+            font-weight: 800;
+            font-size: 28px;
+        }
+
+        .span2 {
+            color: #000000;
+            font-size: 25px;
+            font-family: 'times new roman', sans-serif;
+            font-weight: 500;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .div_filter {
+
+            position: relative;
+            top: -40px;
+            width: 100%;
+            height: 70px;
+            text-align: center
+        }
+
+        .enter {
+            color: #e7bd80;
+            text-align: center;
+            font-family: 'Inter-ExtraBold', sans-serif;
+            font-size: 25px;
+            font-weight: 800;
+            background: #091a1b;
+            border-radius: 50px;
+            border-style: solid;
+            border-color: #e6bd80;
+            border-width: 3px;
+            width: 250px;
+            height: 53px;
+            bottom: 10px;
+            margin: 10px auto;
+        }
+    }
+}

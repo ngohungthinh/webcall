@@ -1,0 +1,36 @@
+.video-call-wrappper {
+    .header-container {
+        @import url(../../assets/css/bootstrap.min.css);
+        @import url(../../assets/css/normalize.min.css);
+
+    }
+
+    .content-container {
+        @import url(../../assets/css/bootstrap.min.css);
+        @import url(../../assets/css/normalize.min.css);
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .sender-message {
+            background-color: red;
+            color: white;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .receiver-message {
+            background-color: green;
+            color: white;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+    }
+}

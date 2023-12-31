@@ -6,8 +6,22 @@ import LoginModal from "../Modal/LoginModal/LoginModal";
 import {
     Link, NavLink
 } from "react-router-dom";
-class Nav extends React.Component {
+import InfoUserMainModal from "../Modal/InfoUserMainModal/InfoUserMainModal";
 
+class Nav extends React.Component {
+    state = {
+        popUpInfoUserMain: false,
+    }
+
+    changePopUpInfoUserMain = () => {
+        this.setState({
+            popUpInfoUserMain: !this.state.popUpInfoUserMain
+        })
+    }
+
+    hacdleClickAvatar = () => {
+        this.changePopUpInfoUserMain()
+    }
     handleClickLogin = () => {
         this.props.changePopUpLogin()
     }
@@ -16,6 +30,7 @@ class Nav extends React.Component {
         let isLogin = this.props.isLogin
         return (
             <>
+                <InfoUserMainModal popUpInfoUserMain={this.state.popUpInfoUserMain} changePopUpInfoUserMain={this.changePopUpInfoUserMain} myInfo={this.props.myInfo} />
                 <header>
                     <div className="header-container">
                         <img className="logo" src={logo} alt="logo" onClick={() => { this.props.history.push("/") }} />
@@ -32,7 +47,7 @@ class Nav extends React.Component {
                             isLogin ?
 
                                 <div className="avata" >
-                                    <img src={require("../../assets/images/avt.jpeg")} alt="avata" />
+                                    <img src={require("../../assets/images/avt.jpeg")} alt="avata" onClick={this.hacdleClickAvatar} />
                                 </div>
                                 :
                                 <button className="btn btn-Login" onClick={this.handleClickLogin}>

@@ -27,7 +27,7 @@ class MainPage extends React.Component {
     render() {
         return (
             <>
-                <FilterModal popUpFilter={this.state.popUpFilter} changePopUpFilter={this.changePopUpFilter} />
+                <FilterModal popUpFilter={this.state.popUpFilter} changePopUpFilter={this.changePopUpFilter} changeInfoFilter={this.props.changeInfoFilter} infoFilter={this.props.infoFilter} />
                 <div className="app_home_page">
                     <div className="container">
 

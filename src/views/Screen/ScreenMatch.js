@@ -29,6 +29,21 @@ class ScreenMatch extends React.Component {
 
     componentWillUnmount() {
         clearInterval(this.state.checkMatchInterval);
+        if (this.state.callMediaConnection)
+            this.state.callMediaConnection.close()
+        if (this.state.connection)
+            this.state.connection.close()
+        this.remoteVideo.current.srcObject = undefined
+        this.setState({
+            remoteUser: {},
+            remotePeerId: "",
+            connection: undefined,
+            callMediaConnection: undefined,
+            receivedMessages: [],
+            messageToSent: "",
+
+        })
+
     }
     async componentDidMount() {
         var peer = new Peer({
@@ -67,7 +82,7 @@ class ScreenMatch extends React.Component {
                 }
                 if (this.state.connection)
                     clearInterval(this.state.checkMatchInterval);
-            }, 5000)
+            }, 2000)
             //----------------
         });
 
@@ -272,7 +287,7 @@ class ScreenMatch extends React.Component {
             if (this.state.connection)
                 clearInterval(this.state.checkMatchInterval);
 
-        }, 4000)
+        }, 2000)
     }
     render() {
         const { receivedMessages } = this.state;
@@ -298,7 +313,7 @@ class ScreenMatch extends React.Component {
                     <div className="chat">
                         <div className="avt-report">
                             <div className="avt-name" onClick={this.changePopUpInfoUser}>
-                                <img src={require("../../assets/images/avt.jpeg")} alt="" /> {this.state.remoteUser.name ? this.state.remoteUser.name : ""}
+                                <img src={require("../../assets/images/user_icon.png")} alt="" /> {this.state.remoteUser.name ? this.state.remoteUser.name : ""}
                             </div>
                             <i className="fa-solid fa-flag" onClick={this.changePopUpReport}></i>
                         </div>
